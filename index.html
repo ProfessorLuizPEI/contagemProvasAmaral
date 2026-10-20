@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A Escola Amaral está torcendo por vocês!🎓✨</title>
+    
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts: Fredoka (Jovem/Divertida) e Plus Jakarta Sans (Moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'aurora-1': 'aurora 14s infinite alternate ease-in-out',
+                        'aurora-2': 'aurora 18s infinite alternate-reverse ease-in-out',
+                        'aurora-3': 'aurora 16s 3s infinite alternate ease-in-out',
+                        'float-soft': 'float 5s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        aurora: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '50%': { transform: 'translate(50px, -60px) scale(1.15)' },
+                            '100%': { transform: 'translate(-30px, 40px) scale(0.95)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(4deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.6 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #080a16;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Studygram Cards */
+        .glass-paulista {
+            background: rgba(13, 22, 48, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1.5px solid rgba(6, 182, 212, 0.3);
+            box-shadow: 0 20px 50px -10px rgba(6, 182, 212, 0.2), inset 0 0 30px rgba(6, 182, 212, 0.05);
+        }
+
+        .glass-enem {
+            background: rgba(22, 20, 42, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1.5px solid rgba(250, 204, 21, 0.35);
+            box-shadow: 0 20px 50px -10px rgba(250, 204, 21, 0.2), inset 0 0 30px rgba(250, 204, 21, 0.05);
+        }
+
+        .glass-tile {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Text Shadows Neon */
+        .glow-cyan {
+            text-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+        }
+
+        .glow-yellow {
+            text-shadow: 0 0 25px rgba(250, 204, 21, 0.65);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center relative font-sans selection:bg-cyan-500 selection:text-black">
+
+    <!-- ========================================================================= -->
+    <!-- MESH GRADIENT AURORA ANIMADO DE FUNDO                                     -->
+    <!-- ========================================================================= -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-24 -left-20 w-[550px] h-[550px] bg-blue-600/25 rounded-full blur-[130px] animate-aurora-1"></div>
+        <div class="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[140px] animate-aurora-2"></div>
+        <div class="absolute -bottom-20 left-1/3 w-[650px] h-[650px] bg-amber-500/20 rounded-full blur-[150px] animate-aurora-3"></div>
+        <div class="absolute top-2/3 right-1/4 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[120px] animate-aurora-1"></div>
+
+        <!-- Doodling sutil e fofo -->
+        <div class="absolute top-[10%] left-[6%] text-cyan-400/20 animate-float-soft">
+            <i data-lucide="sparkles" class="w-10 h-10"></i>
+        </div>
+        <div class="absolute top-[18%] right-[8%] text-amber-400/25 animate-float-soft" style="animation-delay: 1.5s;">
+            <i data-lucide="star" class="w-12 h-12"></i>
+        </div>
+        <div class="absolute bottom-[15%] left-[8%] text-purple-400/20 animate-float-soft" style="animation-delay: 2s;">
+            <i data-lucide="sparkle" class="w-10 h-10"></i>
+        </div>
+        <div class="absolute bottom-[20%] right-[6%] text-cyan-300/20 animate-float-soft" style="animation-delay: 0.8s;">
+            <i data-lucide="zap" class="w-10 h-10"></i>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- CONTEÚDO PRINCIPAL                                                        -->
+    <!-- ========================================================================= -->
+    <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 z-10 flex-1 flex flex-col justify-center items-center">
+        
+        <!-- TÍTULO PRINCIPAL MINIMALISTA & DESCOLADO -->
+        <header class="text-center mb-10 sm:mb-14 space-y-3">
+                       
+            <h6 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white font-fredoka tracking-wide leading-tight">
+                Escola José Pinto do Amaral está torcendo por vocês! 🎓✨
+            </h6>
+            
+        </header>
+
+        <!-- GRID COM OS DOIS PLACARES LADO A LADO -->
+        <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+            <!-- --------------------------------------------------------------------- -->
+            <!-- PLACAR 1: PROVA PAULISTA (04/11)                                     -->
+            <!-- --------------------------------------------------------------------- -->
+            <section class="glass-paulista rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.01]">
+                <!-- Glow Accent Interno -->
+                <div class="absolute -top-16 -left-16 w-36 h-36 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div>
+                    <!-- Badge & Categoria -->
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                      
+                  
+                    </div>
+
+                    <!-- TITULO COM FRASE OBRIGATÓRIA DESTACADA -->
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-300 block mb-1">Rede Estadual de Ensino</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-fredoka tracking-wide leading-snug">
+                            Prova Paulista
+                        </h2>
+                        <p class="text-xs sm:text-sm text-cyan-200/80 font-medium mt-1">
+                            Início <strong class="text-white"> 04 de Novembro de 2026</strong>
+                        </p>
+                    </div>
+
+                    <!-- BLOCOS NUMÉRICOS DO CONTADOR DA PROVA PAULISTA -->
+                    <div class="grid grid-cols-4 gap-2.5 sm:gap-3.5 my-6">
+                        <!-- Dias -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center border border-cyan-500/30 bg-cyan-500/10">
+                            <span id="pp-days" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-cyan-300 glow-cyan block">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-cyan-200/90 uppercase tracking-wider block mt-1">Dias</span>
+                        </div>
+                        <!-- Horas -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center">
+                            <span id="pp-hours" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block mt-1">Horas</span>
+                        </div>
+                        <!-- Minutos -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center">
+                            <span id="pp-minutes" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block mt-1">Min</span>
+                        </div>
+                        <!-- Segundos -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center border border-amber-400/30 bg-amber-400/10">
+                            <span id="pp-seconds" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-amber-300 glow-yellow block animate-pulse">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-amber-300 uppercase tracking-wider block mt-1">Seg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé do Placar -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-medium">
+                    <span id="pp-status" class="text-cyan-300 font-semibold">Calculando tempo restante...</span>
+                    <span class="text-amber-300 font-bold flex items-center gap-1">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Bons Estudos!
+                    </span>
+                </div>
+            </section>
+
+
+            <!-- --------------------------------------------------------------------- -->
+            <!-- PLACAR 2: ENEM 2026 (08/11)                                          -->
+            <!-- --------------------------------------------------------------------- -->
+            <section class="glass-enem rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.01]">
+                <!-- Glow Accent Interno -->
+                <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div>
+                    <!-- Badge & Categoria -->
+                    <div class="flex items-center justify-between gap-2 mb-4">
+ 
+                        <span class="text-xs font-semibold text-slate-400 flex items-center gap-1">
+
+                        </span>
+                    </div>
+
+                    <!-- TITULO ENEM -->
+                    <div class="mb-6">
+                      
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-fredoka tracking-wide leading-snug">
+                            ENEM 2026
+                        </h2>
+                        <p class="text-xs sm:text-sm text-amber-200/90 font-semibold mt-1">
+                            Início <strong class="text-white"> 08 de Novembro</strong>
+                        </p>
+                    </div>
+
+                    <!-- BLOCOS NUMÉRICOS DO CONTADOR DO ENEM (COM DESTAQUE EM DIAS) -->
+                    <div class="grid grid-cols-4 gap-2.5 sm:gap-3.5 my-6">
+                        <!-- Dias (Destaque Principal) -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center border-2 border-amber-400/50 bg-gradient-to-b from-amber-400/20 to-yellow-500/10">
+                            <span id="e-days" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-amber-300 glow-yellow block">00</span>
+                            <span class="text-[10px] sm:text-xs font-extrabold text-amber-300 uppercase tracking-wider block mt-1">Dias</span>
+                        </div>
+                        <!-- Horas -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center">
+                            <span id="e-hours" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block mt-1">Horas</span>
+                        </div>
+                        <!-- Minutos -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center">
+                            <span id="e-minutes" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block mt-1">Min</span>
+                        </div>
+                        <!-- Segundos -->
+                        <div class="glass-tile rounded-2xl p-3 sm:p-4 text-center border border-amber-400/30 bg-amber-400/10">
+                            <span id="e-seconds" class="font-fredoka text-3xl sm:text-5xl font-extrabold text-amber-300 glow-yellow block animate-pulse">00</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-amber-300 uppercase tracking-wider block mt-1">Seg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé do Placar -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-medium">
+                    <span id="e-status" class="text-amber-300 font-semibold">Calculando tempo restante...</span>
+                    <span class="text-amber-400 font-bold flex items-center gap-1">
+                        <i data-lucide="target" class="w-3.5 h-3.5"></i> Foco no Exame!
+                    </span>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ MINIMALISTA -->
+    <footer class="w-full text-center py-6 text-xs text-slate-500 font-medium z-10">
+  
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT DE CONTAGEM REGRESSIVA SIMPLES E PRECISA                        -->
+    <!-- ========================================================================= -->
+    <script>
+        const pad = (n) => String(n).padStart(2, '0');
+
+        function updateCountdowns() {
+            const now = new Date();
+
+            // 1. DATA ALVO PROVA PAULISTA: 04/11/2026 às 07:00
+            const targetPaulista = new Date(2026, 10, 4, 7, 0, 0); // Mês 10 = Novembro em JS
+            const diffPP = targetPaulista - now;
+
+            if (diffPP <= 0) {
+                document.getElementById('pp-days').innerText = "00";
+                document.getElementById('pp-hours').innerText = "00";
+                document.getElementById('pp-minutes').innerText = "00";
+                document.getElementById('pp-seconds').innerText = "00";
+                document.getElementById('pp-status').innerText = "A prova começou! Boa sorte!";
+            } else {
+                const daysPP = Math.floor(diffPP / (1000 * 60 * 60 * 24));
+                const hoursPP = Math.floor((diffPP % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minsPP = Math.floor((diffPP % (1000 * 60 * 60)) / (1000 * 60));
+                const secsPP = Math.floor((diffPP % (1000 * 60)) / 1000);
+
+                document.getElementById('pp-days').innerText = pad(daysPP);
+                document.getElementById('pp-hours').innerText = pad(hoursPP);
+                document.getElementById('pp-minutes').innerText = pad(minsPP);
+                document.getElementById('pp-seconds').innerText = pad(secsPP);
+                document.getElementById('pp-status').innerText = `Faltam ${daysPP} dias e ${hoursPP}h para a Prova Paulista`;
+            }
+
+            // 2. DATA ALVO ENEM: 08/11/2026 às 13:00
+            const targetENEM = new Date(2026, 10, 8, 13, 0, 0); // Mês 10 = Novembro em JS
+            const diffENEM = targetENEM - now;
+
+            if (diffENEM <= 0) {
+                document.getElementById('e-days').innerText = "00";
+                document.getElementById('e-hours').innerText = "00";
+                document.getElementById('e-minutes').innerText = "00";
+                document.getElementById('e-seconds').innerText = "00";
+                document.getElementById('e-status').innerText = "Portões abertos! Boa prova!";
+            } else {
+                const daysENEM = Math.floor(diffENEM / (1000 * 60 * 60 * 24));
+                const hoursENEM = Math.floor((diffENEM % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minsENEM = Math.floor((diffENEM % (1000 * 60 * 60)) / (1000 * 60));
+                const secsENEM = Math.floor((diffENEM % (1000 * 60)) / 1000);
+
+                document.getElementById('e-days').innerText = pad(daysENEM);
+                document.getElementById('e-hours').innerText = pad(hoursENEM);
+                document.getElementById('e-minutes').innerText = pad(minsENEM);
+                document.getElementById('e-seconds').innerText = pad(secsENEM);
+                document.getElementById('e-status').innerText = `Faltam ${daysENEM} dias para o 1º dia do ENEM`;
+            }
+        }
+
+        // Inicialização dos Ícones Lucide e Loop
+        window.onload = function() {
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+            updateCountdowns();
+            setInterval(updateCountdowns, 1000);
+        };
+    </script>
+</body>
+</html>
